@@ -72,7 +72,7 @@ I improved my understanding of CSS Grid by working through a bento-style layout.
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Dapo-f)
+- Frontend Mentor - [@Dapo-f](https://www.frontendmentor.io/profile/Dapo-f)
 - Twitter - [@vaLorant56](https://www.twitter.com/vaLorant56)
 
 
