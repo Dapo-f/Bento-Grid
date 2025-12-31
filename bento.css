@@ -1,0 +1,281 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+:root {
+    --purple100: hsl(254, 88%, 90%);
+    --purple500: hsl(256, 67%, 59%);
+    --yellow100: hsl(31, 66%, 93%);
+    --yellow500: hsl(39, 100%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 7%);
+}
+body {
+    background-color: #f2f2f2;
+    min-height: 100vh;
+    font-size: 18px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+@font-face {
+    font-family: Sans-Medium;
+    src: url(assets/fonts/static/DMSans-Medium.ttf);
+}
+@font-face {
+    font-family: Sans-Regular;
+    src: url(assets/fonts/static/DMSans-Regular.ttf);
+}
+@font-face {
+    font-family: Sans-Meditalic;
+    src: url(assets/fonts/static/DMSans-MediumItalic.ttf);
+}
+
+.xlg-text {
+    font-size: 4rem;
+    font-family: Sans-Medium;
+}
+.lg-text {
+    font-size: 2.75rem;
+    font-family: Sans-Regular;
+}
+.med-text {
+    font-size: 2.35rem;
+    font-family: Sans-Medium;
+}
+.sm-text {
+    font-size: 1.5rem;
+    font-family: Sans-Regular;
+}
+
+#main-grid {
+    max-width: 1440px;
+    margin: 1rem;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 75px;
+    gap: 2rem;
+    grid-template-areas: 
+    "a b b c"
+    "a b b c"
+    "a b b c"
+    "a b b c"
+    "a d e c"
+    "f d e c"
+    "f d e c"
+    "f g h h"
+    "f g h h"
+    "f g h h";
+}
+
+#main-grid .card {
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+#main-grid .card:nth-child(1) {
+    background-color: var(--yellow100);
+}
+
+#main-grid .card:nth-child(1) em {
+    color: var(--purple500);
+}
+
+#main-grid .card:nth-child(2),
+#main-grid .card:nth-child(8) {
+    background-color: var(--purple500);
+    color: var(--white);
+}
+#main-grid .card:nth-child(2) .yellow {
+    color: var(--yellow500);
+}
+#main-grid .card:nth-child(2) .sm-text {
+    color: var(--purple100);
+}
+
+#main-grid .card:nth-child(3) {
+    background-color: var(--purple100);
+}
+
+#main-grid .card:nth-child(4),
+#main-grid .card:nth-child(6) {
+    background-color: var(--yellow500);
+}
+
+#main-grid .card:nth-child(5),
+#main-grid .card:nth-child(7) {
+    background-color: var(--white);
+}
+
+#main-grid .card:nth-child(1) {
+    grid-area: a;
+    padding: 5rem 2rem 0 2.5rem;
+}
+
+#main-grid .card:nth-child(1) img {
+    margin-top: 1rem;
+}
+#main-grid .card:nth-child(2) {
+    grid-area: b;
+    padding: 2rem ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-grid .card:nth-child(3) {
+    grid-area: c;
+    padding: 2.75rem 2rem 2.5rem 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#main-grid .card:nth-child(3) img {
+    position: absolute;
+    height: 418px;
+    object-fit: cover;
+    object-position: left;
+    top: 165px;
+}
+
+
+#main-grid .card:nth-child(4) {
+    grid-area: f;
+    padding: 1.75rem 2.25rem;
+}
+
+#main-grid .card:nth-child(4) p {
+    margin-bottom: 2rem;
+}
+#main-grid .card:nth-child(5) {
+    grid-area: d;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+#main-grid .card:nth-child(5) img {
+    position: absolute;
+}
+#main-grid .card:nth-child(5) p {
+    margin-top: 6rem;
+}
+
+#main-grid .card:nth-child(6) {
+    grid-area: e;
+    padding: 1rem 1.75rem;
+    position: relative;
+}
+#main-grid .card:nth-child(6) p {
+    margin-bottom: 1rem;
+}
+
+#main-grid .card:nth-child(7) {
+    grid-area: g;
+    padding: 1.5rem;
+}
+#main-grid .card:nth-child(7) span {
+    display: block;
+}
+#main-grid .card:nth-child(7) img {
+    margin-top: 1.5rem;
+
+}
+
+#main-grid .card:nth-child(8) {
+    grid-area: h;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1.75fr 2fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width:1024px) {
+    #main-grid{
+        grid-auto-rows: initial;
+        grid-template-areas: 
+        "a a b b"
+        "a a b b"
+        "c c f f"
+        "c c f f"
+        "d d e e"
+        "d d e e"
+        "g g h h"
+        "g g h h";
+    }
+    
+    #main-grid .card:nth-child(8) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    #main-grid .card {
+        text-align: center;
+    }
+    
+    #main-grid {
+        grid-template-areas: 
+        "b"
+        "d"
+        "e"
+        "c"
+        "h"
+        "g"
+        "a"
+        "f";
+    }
+    #main-grid .card:nth-child(4),
+    #main-grid .card:nth-child(5),
+    #main-grid .card:nth-child(6),
+    #main-grid .card:nth-child(7) {
+        text-align: left;
+    }
+    #main-grid .card:nth-child(1) {
+        padding: 2rem;
+        text-align: left;
+    }
+    #main-grid .card:nth-child(1) .lg-text {
+        font-size: 2.5rem;
+    }
+    #main-grid .card:nth-child(1) img {
+        width: 250px;
+    }
+    #main-grid .card:nth-child(3) {
+        padding: 2.75rem 1rem 2.5rem 1rem;
+    }
+    #main-grid .card:nth-child(3) .lg-text {
+        font-size: 2.25rem;
+    }
+    #main-grid .card:nth-child(3) img {
+        margin: 1rem 0;
+        position: initial;
+        height: initial;
+    }
+
+    #main-grid .card:nth-child(5) p {
+        margin-top: 8.5rem;
+    }
+    #main-grid .card:nth-child(7) img {
+        width: 200px;
+    }
+    #main-grid .card:nth-child(8) {
+        padding: 1.5rem 4rem;
+    }
+}
+
+@media (max-width: 540px) {
+    #main-grid .card:nth-child(5) p {
+        margin-top: 6rem;
+    }
+    
+}
